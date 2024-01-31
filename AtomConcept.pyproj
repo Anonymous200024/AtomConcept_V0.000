@@ -1,0 +1,54 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>74e18150-0baa-49f4-85cf-0ba05c58c607</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>AtomConcept.py</StartupFile>
+    <SearchPath>GPU_Based_AtomConcept;CPU_Based_AtomConcept;TheReasoner;TrainedConceptualizations</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>AtomConcept</Name>
+    <RootNamespace>AtomConcept</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|venv-AtomConcept</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AtomConcept.py" />
+    <Compile Include="CPU_Based_AtomConcept\BaseHyperNode.py" />
+    <Compile Include="CPU_Based_AtomConcept\BaseHyperPath.py" />
+    <Compile Include="CPU_Based_AtomConcept\ExternallyStructured_Node.py" />
+    <Compile Include="CPU_Based_AtomConcept\ExternallyStructured_Path.py" />
+    <Compile Include="CPU_Based_AtomConcept\InternallyStructured_Node.py" />
+    <Compile Include="CPU_Based_AtomConcept\InternallyStructured_Path.py" />
+    <Compile Include="CPU_Based_AtomConcept\TheConcept_Hypertree.py" />
+    <Compile Include="CPU_Based_AtomConcept\__init__.py" />
+    <Compile Include="GPU_Based_AtomConcept\__init__.py" />
+    <Compile Include="__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|venv-AtomConcept" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CPU_Based_AtomConcept\" />
+    <Folder Include="GPU_Based_AtomConcept\" />
+    <Folder Include="TrainedConceptualizations\" />
+    <Folder Include="TheReasoner\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
